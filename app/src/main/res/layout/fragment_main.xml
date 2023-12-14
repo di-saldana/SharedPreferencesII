@@ -14,7 +14,7 @@ tools:context=".MainFragment">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:hint="Escribe algo"
+        android:hint="Write something"
         />
 
     <Button
@@ -23,7 +23,7 @@ tools:context=".MainFragment">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Previsualizar" />
+        android:text="Preview" />
 
     <TextView
         android:id="@+id/textView"
@@ -39,7 +39,7 @@ tools:context=".MainFragment">
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:text="Cerrar" />
+        android:text="Close" />
 
     </RelativeLayout>
 </FrameLayout>
