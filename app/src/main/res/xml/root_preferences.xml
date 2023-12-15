@@ -6,6 +6,12 @@
     <PreferenceScreen
         android:key="basic"
         android:title="Basic Format">
+
+        <ListPreference
+            android:defaultValue="1"
+            android:key="size"
+            android:title="Size" />
+
     </PreferenceScreen>
 
     <PreferenceScreen

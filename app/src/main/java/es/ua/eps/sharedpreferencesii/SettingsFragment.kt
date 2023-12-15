@@ -3,6 +3,7 @@ package es.ua.eps.sharedpreferencesii
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.PreferenceScreen
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,6 +31,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.root_preferences, rootKey)
+    }
+
+    override fun onNavigateToScreen(preferenceScreen: PreferenceScreen) {
+        super.onNavigateToScreen(preferenceScreen)
+        setPreferenceScreen(preferenceScreen)
     }
 
     companion object {
