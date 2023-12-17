@@ -1,11 +1,15 @@
 package es.ua.eps.sharedpreferencesii
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.preference.PreferenceManager
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +38,6 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
@@ -42,7 +45,32 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val textView = view.findViewById<TextView>(R.id.textView)
+        val textInput = view.findViewById<TextView>(R.id.textInput)
         textView.visibility = View.GONE
+
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+
+        view.findViewById<Button>(R.id.previewButton).setOnClickListener {
+            val textSize = sharedPrefs?.getString("size", "16")
+            val textColor = sharedPrefs?.getString("text_color", "#000000")
+            val backgroundColor = sharedPrefs?.getString("background_color", "#FFFFFF")
+            val isBold = sharedPrefs?.getBoolean("bold", false) ?: false
+            val isItalic = sharedPrefs?.getBoolean("italic", false) ?: false
+            val alpha = sharedPrefs?.getInt("alpha", 0)
+            val rotation = sharedPrefs?.getInt("rotation", 0)
+
+            textView.text = textInput.text
+            textView.textSize = textSize?.toFloat() ?: 16f
+            textView.setTextColor(Color.parseColor(textColor))
+            textView.setBackgroundColor(Color.parseColor(backgroundColor))
+            textView.setTypeface(null, if (isBold) Typeface.BOLD else Typeface.NORMAL)
+            textView.setTypeface(textView.typeface, if (isItalic) Typeface.ITALIC else Typeface.NORMAL)
+            val alphaFloat = alpha?.toFloat() ?: 1f
+            textView.alpha = alphaFloat / 255f // Convert alpha to a float between 0 and 1
+            textView.rotation = rotation?.toFloat() ?: 0f
+
+            textView.visibility = View.VISIBLE
+        }
     }
 
     companion object {

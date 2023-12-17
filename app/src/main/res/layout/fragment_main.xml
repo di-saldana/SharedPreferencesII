@@ -18,7 +18,7 @@ tools:context=".MainFragment">
         />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/previewButton"
         android:layout_below="@id/textInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,9 +27,9 @@ tools:context=".MainFragment">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_below="@id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_below="@id/previewButton"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_centerHorizontal="true"
         android:text="TextView" />
 

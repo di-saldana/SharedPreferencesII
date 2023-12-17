@@ -47,7 +47,7 @@
             android:title="Alpha"
             android:dialogTitle="Choose Alpha Transparency"
             android:min="0"
-            android:max="1"
+            android:max="100"
             android:defaultValue="0" />
 
         <SeekBarPreference
