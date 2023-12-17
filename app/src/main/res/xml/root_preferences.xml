@@ -8,15 +8,55 @@
         android:title="Basic Format">
 
         <ListPreference
-            android:defaultValue="1"
             android:key="size"
-            android:title="Size" />
+            android:title="Size"
+            android:dialogTitle="Choose Size"
+            android:entries="@array/size_entries"
+            android:entryValues="@array/size_values"/>
+
+        <ListPreference
+            android:key="text_color"
+            android:title="FG Color"
+            android:dialogTitle="Choose Text Color"
+            android:entries="@array/color_entries"
+            android:entryValues="@array/color_values"/>
+
+        <ListPreference
+            android:key="background_color"
+            android:title="BG Color"
+            android:dialogTitle="Choose Background Color"
+            android:entries="@array/color_entries"
+            android:entryValues="@array/color_values"/>
+
+        <SwitchPreference
+            android:key="bold"
+            android:title="Bold" />
+
+        <CheckBoxPreference
+            android:key="italic"
+            android:title="Italic" />
 
     </PreferenceScreen>
 
     <PreferenceScreen
         android:key="advanced"
         android:title="Advanced Format">
+
+        <SeekBarPreference
+            android:key="alpha"
+            android:title="Alpha"
+            android:dialogTitle="Choose Alpha Transparency"
+            android:min="0"
+            android:max="1"
+            android:defaultValue="0" />
+
+        <SeekBarPreference
+            android:key="rotation"
+            android:title="Rotation"
+            android:dialogTitle="Choose Rotation"
+            android:min="0"
+            android:max="360"
+            android:defaultValue="0" />
     </PreferenceScreen>
 
 </PreferenceScreen>
