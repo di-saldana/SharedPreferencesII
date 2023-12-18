@@ -1,8 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu_item_a"
+        android:id="@+id/main"
+        android:icon="@drawable/comment"
         android:title="Main" />
     <item
-        android:id="@+id/menu_item_b"
+        android:id="@+id/settings"
+        android:icon="@drawable/wrench"
         android:title="Settings" />
 </menu>

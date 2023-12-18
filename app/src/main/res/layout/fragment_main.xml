@@ -12,8 +12,9 @@ tools:context=".MainFragment">
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInput"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
+        android:layout_margin="30dp"
         android:hint="Write something"
         />
 
@@ -28,9 +29,10 @@ tools:context=".MainFragment">
     <TextView
         android:id="@+id/textView"
         android:layout_below="@id/previewButton"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
         android:text="TextView" />
 
     <Button
@@ -39,6 +41,7 @@ tools:context=".MainFragment">
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
         android:text="Close" />
 
     </RelativeLayout>

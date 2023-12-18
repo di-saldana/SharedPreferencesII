@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         drawerLayout = findViewById(R.id.drawerLayout)
-        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.hello_blank_fragment, R.string.hello_blank_fragment) //
+        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.hello_blank_fragment, R.string.hello_blank_fragment)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
@@ -30,14 +30,14 @@ class MainActivity : AppCompatActivity() {
         val navigationView: NavigationView = findViewById(R.id.navigationView)
         navigationView.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.menu_item_a -> {
+                R.id.main -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fragmentContainer, MainFragment())
                         .commit()
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
-                R.id.menu_item_b -> {
+                R.id.settings -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fragmentContainer, SettingsFragment())
                         .commit()

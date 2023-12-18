@@ -71,6 +71,10 @@ class MainFragment : Fragment() {
 
             textView.visibility = View.VISIBLE
         }
+
+        view.findViewById<Button>(R.id.buttonCerrar).setOnClickListener {
+            activity?.finishAffinity()
+        }
     }
 
     companion object {
